@@ -1,6 +1,7 @@
 name: 01 - Building Blocks
 
 on : workflow_dispatch 
+# workflow_dispatch its trigger event manually 
 
 jobs:
   echo-hello:

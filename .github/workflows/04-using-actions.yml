@@ -1,0 +1,22 @@
+name: 04 - Using Actions
+
+on : push
+
+jobs: 
+    build:
+       runs-on: ubuntu-latest
+       steps:
+        #  - name: Checkout
+        #    uses: action/checkout@v4 , not using becase verion 4 is not available
+        #  - name: Printig folders
+        #    run: ls
+         - name: Setup node 
+           uses: actions/setup-node@v3
+           with:
+             node-version: "20.x"
+         - name: Install Dependencies
+           run: npm ci
+        #    working-directory: 04-using-actions/react-app
+
+    #1 . Install dependencies for our react app
+    #2 . Execute automated tests
