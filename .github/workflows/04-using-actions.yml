@@ -16,7 +16,7 @@ jobs:
              node-version: "20.x"
          - name: Install Dependencies
            run: npm ci
-        #    working-directory: 04-using-actions/react-app
+           working-directory: 04-using-actions/react-app
 
     #1 . Install dependencies for our react app
     #2 . Execute automated tests
