@@ -4,7 +4,6 @@ env:
    WORKFLOW_VAR: "I am a workflow env var"
    OVERWRITTEN: "I will be overwritten"
 on: 
- push:
  workflow_dispatch:
 
 jobs:
@@ -19,6 +18,7 @@ jobs:
       env: 
        STEP_VAR: "I am a step env var"
        step_var2: "I am another step var"
+       # accessing variable like $step_var2 is dollar sign bash variable
       run: |
        echo "Step env var:  ${{ env.STEP_VAR }}"
        echo "Step env var 2: $step_var2"
@@ -29,9 +29,11 @@ jobs:
        
     - name: Overwrite Job Variable
       env: 
+       # declaration of var within steps stays within steps
        OVERWRITTEN: "I have been overwritten at the step level"
       run: |
         echo "Step env var: ${{ env.OVERWRITTEN }}"
+      
       
 
  
