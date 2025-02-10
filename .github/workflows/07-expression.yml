@@ -2,7 +2,6 @@ name: 07 - Using expressions
 run-name: 07 - Using expressions | DEBUG - ${{ inputs.debug && 'ON' || 'OFF' }}
 
 on: 
- push:
  workflow_dispatch:
 # adding debug input as type boolean & default will be false & this is under workflow_dispatch 
 # so only under this we can call debug
